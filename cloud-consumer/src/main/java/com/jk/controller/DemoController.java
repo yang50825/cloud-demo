@@ -51,6 +51,14 @@ public class DemoController {
         demoFeign.addDemo(demo);
     }
 
+    /**
+     * TODO
+     * 
+     * @Description 上传图片 
+     * @Return java.lang.String
+     * @Author 杨帅
+     * @Date 2022/11/16 11:25     
+     **/
     @RequestMapping("uploadImg")
     public String upload(MultipartFile file) throws Exception{
         String upload2oss = OSSUtil.upload2oss(file);
