@@ -1,6 +1,7 @@
 package com.jk.service;
 
-import com.jk.pojo.DemoBean;
+
+import com.jk.entity.DemoBean;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public interface DemoService {
      * TODO
      *
      * @Description 新增游记
- * @Return void
+     * @Return void
      * @Author 杨帅
      * @Date 2022/11/15 19:52
      **/

@@ -1,7 +1,7 @@
 package com.jk.controller;
 
+import com.jk.entity.DemoBean;
 import com.jk.feign.DemoFeign;
-import com.jk.pojo.DemoBean;
 import com.jk.util.OSSUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;

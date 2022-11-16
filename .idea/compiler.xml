@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="cloud-common" />
         <module name="cloud-provider" />
-        <module name="cloud-demo" />
+        <module name="cloud-api" />
         <module name="eureka" />
         <module name="cloud-consumer" />
       </profile>
@@ -16,6 +17,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-api" options="-parameters" />
+      <module name="cloud-common" options="-parameters" />
       <module name="cloud-consumer" options="-parameters" />
       <module name="cloud-provider" options="-parameters" />
       <module name="eureka" options="-parameters" />

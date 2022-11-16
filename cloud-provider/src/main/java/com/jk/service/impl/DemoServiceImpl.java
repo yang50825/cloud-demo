@@ -2,7 +2,7 @@ package com.jk.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jk.dao.DemoDao;
-import com.jk.pojo.DemoBean;
+import com.jk.entity.DemoBean;
 import com.jk.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

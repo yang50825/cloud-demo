@@ -1,7 +1,7 @@
 package com.jk.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jk.pojo.DemoBean;
+import com.jk.entity.DemoBean;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.Mapper;
 
