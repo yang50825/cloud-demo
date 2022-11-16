@@ -1,0 +1,10 @@
+server:
+  port: 8848
+eureka:
+  client:
+    #\u662F\u5426\u6CE8\u518C\u5F53\u524D\u670D\u52A1
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      #\u6CE8\u518C\u4E2D\u5FC3\u7684\u8BBF\u95EE\u5730\u5740
+      defaultZone: http://localhost:8848/eureka/

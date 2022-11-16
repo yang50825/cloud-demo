@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: cloud-consumer
+eureka:
+  client:
+    serviceUrl:
+      #\u6CE8\u518C\u4E2D\u5FC3\u7684\u8BBF\u95EE\u5730\u5740
+      defaultZone: http://localhost:8848/eureka/
