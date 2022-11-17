@@ -6,10 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.joda.time.DateTime;
@@ -113,15 +110,17 @@ public class OSSUtil {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
 		// 该桶中的文件key
 		// 文件类型
-		String type = fileupload.getContentType().split("/")[1];
-		String dateString = sdf.format(new Date()) + "." + type;//
+		String realfilename = fileupload.getOriginalFilename();
+		String imgSuffix = realfilename.substring(realfilename.lastIndexOf("."));
+
+		String newFilename = UUID.randomUUID() +imgSuffix;
 		// 上传文件
-		ossClient.putObject(BUCKET_NAME, dateString, new ByteArrayInputStream(fileupload.getBytes()));
+		ossClient.putObject(BUCKET_NAME, newFilename, new ByteArrayInputStream(fileupload.getBytes()));
 
 		// 设置URL过期时间为100年，默认这里是int型，转换为long型即可
 		Date expiration = new Date(new Date().getTime() + 3600L * 1000 * 24 * 365 * 100);
 		// 生成URL
-		URL url = ossClient.generatePresignedUrl(BUCKET_NAME, dateString, expiration);
+		URL url = ossClient.generatePresignedUrl(BUCKET_NAME, newFilename, expiration);
 		return url.toString();
 	}
 

@@ -3,10 +3,9 @@ package com.jk.controller;
 import com.jk.entity.DemoBean;
 import com.jk.feign.DemoFeign;
 import com.jk.util.OSSUtil;
+import com.jk.util.UploadUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -65,4 +64,18 @@ public class DemoController {
         System.out.println("upload2oss = " + upload2oss);
         return upload2oss;
     }
+
+    /**
+     * 返回图片上传后存储的地址
+     * @param multipartFile
+     * @return
+     */
+    @PostMapping("upload/image")
+    public String uploadImage(@RequestParam(value = "file") MultipartFile multipartFile){
+        if (multipartFile.isEmpty()){
+            return "文件有误！";
+        }
+        return UploadUtils.uploadImage(multipartFile);
+    }
+
 }
