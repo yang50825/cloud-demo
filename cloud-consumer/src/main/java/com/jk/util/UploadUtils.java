@@ -21,9 +21,9 @@ public class UploadUtils {
     public static String uploadImage(MultipartFile multipartFile){
 
         try {
-            String realfilename = multipartFile.getOriginalFilename();
+            String realFileName = multipartFile.getOriginalFilename();
 
-            String imgSuffix = realfilename.substring(realfilename.lastIndexOf("."));
+            String imgSuffix = realFileName.substring(realFileName.lastIndexOf("."));
 
             String newFilename = UUID.randomUUID() +imgSuffix;
 
